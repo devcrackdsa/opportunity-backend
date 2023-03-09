@@ -1,0 +1,93 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "opportunity",
+    "dateExported": "2023-03-09T17:02:09.245Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "ea02c709-4e45-4a2f-b620-7e864a2ea97e",
+            "name": "admin",
+            "containerId": "",
+            "created": "2023-03-09T14:15:59.463Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3abfc8ef-f7b2-4566-be74-8553055b6eee",
+            "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
+            "containerId": "",
+            "name": "getitems",
+            "url": "localhost:3000/getitems",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-09T14:16:40.698Z",
+            "modified": "2023-03-09T15:49:16.481Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0c35092c-b306-48ac-ad36-b552cedc8694",
+            "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
+            "containerId": "ea02c709-4e45-4a2f-b620-7e864a2ea97e",
+            "name": "saveitem",
+            "url": "localhost:3000/admin/saveitem",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-03-09T15:34:47.666Z",
+            "modified": "2023-03-09T16:34:18.405Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "sde intern"
+                    },
+                    {
+                        "name": "company",
+                        "value": "carckDSA"
+                    },
+                    {
+                        "name": "tags",
+                        "value": "sde webdevlopment builder"
+                    },
+                    {
+                        "name": "desc",
+                        "value": "no sjbds"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\OCN\\Downloads\\20220512_090032.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8c00699f-90ce-4658-bfe4-b0d1ac1a8f5d",
+            "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
+            "containerId": "",
+            "name": "getbytag",
+            "url": "localhost:3000/getbytag?search=sde",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-03-09T16:06:25.047Z",
+            "modified": "2023-03-09T16:34:34.982Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "sde",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
