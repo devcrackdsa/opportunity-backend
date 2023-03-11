@@ -56,13 +56,13 @@ app.get('/getitems', async (req, res) => {
         let items = await jobItem.find({});
 
         if (items.length === 0) {
-            res.send("no items present");
+            res.json("no items present");
             return;
         }
         res.status(200).json(items);
     }
     catch (err) {
-        res.status(500).send("server error");
+        res.status(500).json("server error");
     }
 
 })
@@ -78,7 +78,7 @@ app.get('/getbytag', async (req, res) => {
 
 
         if (items.length === 0) {
-            res.status(500).send("No match Found");
+            res.status(500).json("No match Found");
             return;
         }
         // console.log(arr)
@@ -86,7 +86,7 @@ app.get('/getbytag', async (req, res) => {
         res.status(200).json(items);
     }
     catch (err) {
-        res.status(500).send("Server error");
+        res.status(500).json("Server error");
     }
 
 })
