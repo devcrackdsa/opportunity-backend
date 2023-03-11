@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "opportunity",
-    "dateExported": "2023-03-09T17:02:09.245Z",
+    "dateExported": "2023-03-11T10:25:13.861Z",
     "version": "1.1",
     "folders": [
         {
@@ -36,7 +36,7 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-03-09T15:34:47.666Z",
-            "modified": "2023-03-09T16:34:18.405Z",
+            "modified": "2023-03-11T09:26:28.945Z",
             "headers": [],
             "params": [],
             "body": {
@@ -45,7 +45,7 @@
                 "form": [
                     {
                         "name": "title",
-                        "value": "sde intern"
+                        "value": "sde intern1"
                     },
                     {
                         "name": "company",
@@ -87,6 +87,66 @@
                     "isPath": false
                 }
             ],
+            "tests": []
+        },
+        {
+            "_id": "aa2d8d43-b4d4-4339-b8cd-a6142dda7c28",
+            "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
+            "containerId": "ea02c709-4e45-4a2f-b620-7e864a2ea97e",
+            "name": "save_new_admin",
+            "url": "localhost:3000/admin/newadmin",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-11T09:17:38.004Z",
+            "modified": "2023-03-11T09:37:25.268Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "mohan"
+                    },
+                    {
+                        "name": "password",
+                        "value": "mohan"
+                    },
+                    {
+                        "name": "email",
+                        "value": "yoyo"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "244289c9-4ab8-415a-b810-c59d3bcc3569",
+            "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
+            "containerId": "ea02c709-4e45-4a2f-b620-7e864a2ea97e",
+            "name": "login_admin",
+            "url": "localhost:3000/admin/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-03-11T09:55:00.399Z",
+            "modified": "2023-03-11T09:57:03.860Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "yoyo"
+                    },
+                    {
+                        "name": "password",
+                        "value": "mohan"
+                    }
+                ]
+            },
             "tests": []
         }
     ]
