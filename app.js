@@ -1,22 +1,30 @@
 const express = require('express');
 
 const app = express();
+require('dotenv').config();
 const { mongoose, upload } = require('./functions/required');
-const port = 3000;
+
+
+const port = process.env.port||3000;
+
+
 
 var cookieParser = require('cookie-parser');
+
+// console.log(process.env.connection_string);
 
 
 
 
 // ___________ADMIN_________
-const admin = require('./routes/admin');
+const adminRoute = require('./routes/admin');
+app.use('/admin', adminRoute);
 
 // app.use('/admin', admin);
 
 
 // __________EXPRESS Setup______________
-app.use(cookieParser("Rasengan1278uploaded"));
+
 app.use('/static', express.static('static')); // serving static files
 app.use(express.json());
 app.use(express.urlencoded({
@@ -27,11 +35,15 @@ app.listen(port, () => {
 
 });
 
-app.use('/admin', admin);
+
 
 
 // _________importing models__________
 const jobItem = require('./schema/job_item.js');
+
+
+
+
 
 
 

@@ -16,8 +16,9 @@ router.use(express.urlencoded({
 }));
 
 // ___mongoose_______
+// require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/opportunity');
+mongoose.connect(process.env.connection_string);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
