@@ -3,11 +3,8 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-// const jwt = require('express-jwt');
 const jwt = require('jsonwebtoken');
 const jwtSecret = process.env.jwt_secret;
-
-
 
 // ____________Router___________
 let router = express.Router();
@@ -17,17 +14,15 @@ router.use(express.json());
 router.use(express.urlencoded({
     extended: false
 }));
-// router.use(jwt({ secret: jwtSecret, algorithms: ['HS256'] }));
 
 // ___mongoose_______
-// require('dotenv').config();
 
 mongoose.connect(process.env.connection_string||'mongodb://localhost/opportunity');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
 db.once("open", function () {
-    console.log("We are connected")
+    console.log("Connected to database")
 });
 
 // ______MULTER package for uploading setup_________
@@ -41,6 +36,4 @@ var storage = multer.diskStorage({
 });
 
 var upload = multer({ storage: storage });
-
-
 module.exports = {router,mongoose,upload};
