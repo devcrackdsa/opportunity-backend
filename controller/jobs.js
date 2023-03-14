@@ -1,5 +1,5 @@
 const jobItem = require("../model/job.js");
-
+const path = require("path");
 exports.getitems = async (req, res) => {
   try {
     let items = await jobItem.find({});
@@ -41,13 +41,14 @@ exports.saveitem = async (req, res) => {
       desc: req.body.desc,
       tags: req.body.tags.split(" "),
       url:req.body.url,
-      image: path.join("/static/img/", `${req.file.filename}`),
+     
     };
 
     let item = new jobItem(obj);
     await item.save();
     res.status(200).json("Saved");
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err)
+    res.status(500).json("hello");
   }
 };

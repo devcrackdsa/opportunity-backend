@@ -25,16 +25,14 @@ const auth = (req, res, next) => {
 };
 
 // ___________GETJOBS_________
-const getjobsRoute = require("./routes/getjobs");
-app.use("/getjobs", getjobsRoute);
+const jobsRoute = require("./routes/jobs");
+app.use("/jobs", jobsRoute);
 
 // ___________ADMIN_________
 const adminRoute = require("./routes/admin");
 app.use("/admin", adminRoute);
 
-// ___________POSTJOBS_________
-const postjobsRoute = require("./routes/postjobs");
-app.use("/postjobs", auth, postjobsRoute);
+
 
 // __________EXPRESS Setup______________
 
