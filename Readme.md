@@ -17,5 +17,5 @@ you can generate salt using-
 
 
     TO DO:
-    Changed Schema as required
+    Change Schema as required
     Add update and delete operations for job items
