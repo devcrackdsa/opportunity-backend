@@ -18,7 +18,7 @@ exports.getbytag = async (req, res) => {
   try {
     let tag = req.query.tag.trim();
     console.log(req.query.tag.trim());
-    console.log(tag);
+    
 
     let items = await jobItem.find({ tags: { $regex: tag, $options: "i" } });
 
@@ -48,7 +48,7 @@ exports.saveitem = async (req, res) => {
     await item.save();
     res.status(200).json("Saved");
   } catch (err) {
-    console.log(err)
-    res.status(500).json("hello");
+    // console.log(err)
+    res.status(500).json("not saved");
   }
 };
