@@ -14,3 +14,8 @@ you can generate salt using-
 
 3=> Provide jwt secret key in variable named "jwt_secret"
     jwt secret key can be anything
+
+
+    TO DO:
+    Change Schema as required
+    Add update and delete operations for job items

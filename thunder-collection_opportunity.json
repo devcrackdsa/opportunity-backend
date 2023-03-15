@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "opportunity",
-    "dateExported": "2023-03-11T10:25:13.861Z",
+    "dateExported": "2023-03-15T09:38:56.163Z",
     "version": "1.1",
     "folders": [
         {
@@ -18,11 +18,11 @@
             "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
             "containerId": "",
             "name": "getitems",
-            "url": "localhost:3000/getitems",
+            "url": "localhost:3000/jobs/",
             "method": "GET",
             "sortNum": 10000,
             "created": "2023-03-09T14:16:40.698Z",
-            "modified": "2023-03-09T15:49:16.481Z",
+            "modified": "2023-03-15T08:59:00.154Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -32,11 +32,11 @@
             "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
             "containerId": "ea02c709-4e45-4a2f-b620-7e864a2ea97e",
             "name": "saveitem",
-            "url": "localhost:3000/admin/saveitem",
+            "url": "localhost:3000/jobs/",
             "method": "POST",
             "sortNum": 20000,
             "created": "2023-03-09T15:34:47.666Z",
-            "modified": "2023-03-11T09:26:28.945Z",
+            "modified": "2023-03-15T09:34:35.739Z",
             "headers": [],
             "params": [],
             "body": {
@@ -58,6 +58,10 @@
                     {
                         "name": "desc",
                         "value": "no sjbds"
+                    },
+                    {
+                        "name": "url",
+                        "value": "yuo.com"
                     }
                 ],
                 "files": [
@@ -67,6 +71,10 @@
                     }
                 ]
             },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhmZmZmZGRkb0BnbWFpbC5jb20iLCJpYXQiOjE2Nzg4MDM3NDN9.JAhoESYgoFlM-03TNEDnGtMqEzxUcvYd0IImxO6NU1M"
+            },
             "tests": []
         },
         {
@@ -74,15 +82,15 @@
             "colId": "700b599b-a771-4150-ace3-d2c6d54debe0",
             "containerId": "",
             "name": "getbytag",
-            "url": "localhost:3000/getbytag?search=sde",
+            "url": "localhost:3000/jobs/tags?tag=sde",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-03-09T16:06:25.047Z",
-            "modified": "2023-03-09T16:34:34.982Z",
+            "modified": "2023-03-15T09:03:12.468Z",
             "headers": [],
             "params": [
                 {
-                    "name": "search",
+                    "name": "tag",
                     "value": "sde",
                     "isPath": false
                 }
@@ -98,26 +106,17 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-03-11T09:17:38.004Z",
-            "modified": "2023-03-11T09:37:25.268Z",
+            "modified": "2023-03-15T09:31:45.873Z",
             "headers": [],
             "params": [],
             "body": {
-                "type": "formencoded",
-                "raw": "",
-                "form": [
-                    {
-                        "name": "name",
-                        "value": "mohan"
-                    },
-                    {
-                        "name": "password",
-                        "value": "mohan"
-                    },
-                    {
-                        "name": "email",
-                        "value": "yoyo"
-                    }
-                ]
+                "type": "json",
+                "raw": "{\n    \n    \"name\": \"mohan3\",\n    \"email\": \"shyamprime2610@gmail.com\",\n    \"password\": \"xz\"\n    \n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlveW8iLCJpYXQiOjE2Nzg4NzIzNjl9.4eub8_yhxtH8dtLxOEa-TaXBC2FP9TsljeMHKM1mJ7M"
             },
             "tests": []
         },
@@ -130,22 +129,13 @@
             "method": "POST",
             "sortNum": 50000,
             "created": "2023-03-11T09:55:00.399Z",
-            "modified": "2023-03-11T09:57:03.860Z",
+            "modified": "2023-03-15T09:30:54.721Z",
             "headers": [],
             "params": [],
             "body": {
-                "type": "formencoded",
-                "raw": "",
-                "form": [
-                    {
-                        "name": "email",
-                        "value": "yoyo"
-                    },
-                    {
-                        "name": "password",
-                        "value": "mohan"
-                    }
-                ]
+                "type": "json",
+                "raw": "{\n    \n    \"name\": \"mohan2\",\n    \"email\": \"yoyo\",\n    \"password\": \"xz\"\n    \n  }",
+                "form": []
             },
             "tests": []
         }
