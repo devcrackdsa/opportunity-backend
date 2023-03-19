@@ -18,19 +18,19 @@ exports.getAllItems = async (req, res) => {
 //not working
 exports.getbytag = async (req, res) => {
   try {
-    let tag = req.query.tag.trim();
-    console.log(req.query.tag.trim());
+    let tag = req.query.tag;
 
-    let items = await jobItem.find({ tags: { $regex: tag, $options: "i" } });
+    let items = await jobItem.find({ tags: tag });
 
     if (items.length === 0) {
       res.status(500).json("No match Found");
       return;
+      
     }
 
     res.status(200).json(items);
   } catch (err) {
-    res.status(500).json("Server error");
+    res.status(500).json(err);
   }
 };
 

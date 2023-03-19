@@ -3,8 +3,8 @@ const jobscontroller = require("../controller/jobs");
 
 router
   .get("/", jobscontroller.getAllItems)
-  .get("/:id", jobscontroller.getitem)
   .get("/tags", jobscontroller.getbytag)
+  .get("/:id", jobscontroller.getitem)
   .post("/", upload.single("file"), auth, jobscontroller.saveitem)
   .patch("/:id", upload.single("file"),auth,jobscontroller.updateitem)
   .delete("/:id",auth, jobscontroller.deleteitem);
