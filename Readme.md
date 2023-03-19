@@ -17,5 +17,5 @@ you can generate salt using-
 
 
     TO DO:
-    Change Schema as required
-    Add update and delete operations for job items
+    Implement sorting by last date
+    Add searching my multiple tags
