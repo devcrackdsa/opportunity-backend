@@ -4,7 +4,7 @@ require("dotenv").config();
 const PORT = process.env.port || 3000;
 var cookieParser = require("cookie-parser");
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 // ___________AUTHORIZATION_________
 const auth = (req, res, next) => {
@@ -18,7 +18,7 @@ const auth = (req, res, next) => {
       res.sendStatus(401);
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.sendStatus(401);
   }
   console.log(decoded);
@@ -32,8 +32,6 @@ app.use("/jobs", jobsRoute);
 const adminRoute = require("./routes/admin");
 app.use("/admin", adminRoute);
 
-
-
 // __________EXPRESS Setup______________
 
 app.use("/static", express.static("static")); // serving static files
@@ -43,6 +41,9 @@ app.use(
     extended: false,
   })
 );
+app.get("/", (req, res) => {
+  res.send("Welcome to opportunity backend");
+});
 
 app.listen(PORT, () => {
   console.log(`Server started at ${PORT}`);
