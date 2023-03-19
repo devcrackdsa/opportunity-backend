@@ -18,7 +18,6 @@ exports.getbytag = async (req, res) => {
   try {
     let tag = req.query.tag.trim();
     console.log(req.query.tag.trim());
-    
 
     let items = await jobItem.find({ tags: { $regex: tag, $options: "i" } });
 
@@ -39,16 +38,24 @@ exports.saveitem = async (req, res) => {
       title: req.body.title,
       company: req.body.company,
       desc: req.body.desc,
+      image: path.join("/static/img/", `${req.file.filename}`),
+      lastdate: req.body.lastdate,
+      stipend: req.body.stipend,
+      exclusive: req.body.exclusive,
+      live: req.body.live,
+      location: req.body.location,
+      duration: req.body.duration,
+      url: req.body.url,
       tags: req.body.tags.split(" "),
-      url:req.body.url,
-     
+      skills: req.body.skills.split(" "),
+      requirements: req.body.requirements.split(" "),
     };
 
     let item = new jobItem(obj);
     await item.save();
     res.status(200).json("Saved");
   } catch (err) {
-    // console.log(err)
-    res.status(500).json("not saved");
+    console.log(err)
+    res.status(500).json(err);
   }
 };

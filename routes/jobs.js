@@ -4,6 +4,6 @@ const jobscontroller = require("../controller/jobs");
 router
   .get("/", jobscontroller.getitems)
   .get("/tags", jobscontroller.getbytag)
-  .post("/", auth, jobscontroller.saveitem);
+  .post("/", upload.single('file'),auth, jobscontroller.saveitem);
 
 module.exports = router;
