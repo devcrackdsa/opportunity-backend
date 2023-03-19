@@ -1,1 +1,275 @@
-{"client":"Thunder Client","collectionName":"opportunity","dateExported":"2023-03-19T11:30:49.715Z","version":"1.1","folders":[],"requests":[{"_id":"a0255207-f4e5-4338-9a3b-3f817683d213","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/6416efe21a5d8c8f1828a55b","url":"localhost:3000/jobs/6416efe21a5d8c8f1828a55b","method":"GET","sortNum":10000,"created":"2023-03-19T11:29:11.777Z","modified":"2023-03-19T11:29:11.777Z","headers":[],"params":[],"tests":[]},{"_id":"dede9c85-43ed-47c1-bce4-5e6f4959d81f","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/6416e2019030b510036a713b","url":"localhost:3000/jobs/6416efe91a5d8c8f1828a55d","method":"PATCH","sortNum":20000,"created":"2023-03-19T11:29:23.445Z","modified":"2023-03-19T11:29:23.445Z","headers":[],"params":[],"body":{"type":"formdata","raw":"","form":[{"name":"title","value":"patched name"},{"name":"stipend","value":"65"}]},"auth":{"type":"bearer","bearer":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"},"tests":[]},{"_id":"cdf5aab4-4b9c-43ca-b1fc-e16d976fd917","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/6416deaa38532ae0530ea724","url":"localhost:3000/jobs/6416efe91a5d8c8f1828a55d","method":"DELETE","sortNum":30000,"created":"2023-03-19T11:29:38.449Z","modified":"2023-03-19T11:29:38.449Z","headers":[],"params":[],"auth":{"type":"bearer","bearer":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"},"tests":[]},{"_id":"879e7533-c11d-4cc2-8850-68546ea78ba8","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/admin/newadmin","url":"localhost:3000/admin/newadmin","method":"POST","sortNum":40000,"created":"2023-03-19T11:29:45.823Z","modified":"2023-03-19T11:29:45.823Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \n    \"name\": \"utsav\",\n    \"email\": \"hello@gmail.com\",\n    \"password\": \"123456\"\n    \n  }","form":[]},"auth":{"type":"bearer","bearer":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"},"tests":[]},{"_id":"46d42c46-b204-4cff-9776-f0246c4662bd","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/","url":"localhost:3000/jobs/","method":"POST","sortNum":50000,"created":"2023-03-19T11:29:58.773Z","modified":"2023-03-19T11:29:58.773Z","headers":[],"params":[],"body":{"type":"formdata","raw":"","form":[{"name":"title","value":"Crackdsa intern 3"},{"name":"company","value":"crackdsa"},{"name":"desc","value":"intern"},{"name":"lastdate","value":"05/22/2012"},{"name":"stipend","value":"20000"},{"name":"exclusive","value":"true"},{"name":"live","value":"true"},{"name":"location","value":"kanpur"},{"name":"duration","value":"3 months"},{"name":"url","value":"crackdsa.com"},{"name":"tags","value":"webdev backend frontend"},{"name":"skills","value":"react css html node javascript"},{"name":"requirements","value":"react css html node javascript"}],"files":[{"name":"file","value":"c:\\Users\\Utsav yadav\\projects\\opportunity-backend\\sample.jpg"}]},"auth":{"type":"bearer","bearer":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"},"tests":[]},{"_id":"2144504b-0da8-47d8-8995-353efd93efda","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/","url":"localhost:3000/jobs/6416e2019030b510036a713b","method":"PUT","sortNum":60000,"created":"2023-03-19T11:30:11.293Z","modified":"2023-03-19T11:30:11.293Z","headers":[],"params":[],"body":{"type":"formdata","raw":"","form":[{"name":"title","value":"Crackdsa intern 5"},{"name":"company","value":"crackdsa"},{"name":"desc","value":"intern"},{"name":"lastdate","value":"05/22/2012"},{"name":"stipend","value":"20000"},{"name":"exclusive","value":"true"},{"name":"live","value":"true"},{"name":"location","value":"kanpur"},{"name":"duration","value":"3 months"},{"name":"url","value":"crackdsa.com"},{"name":"tags","value":"webdev backend frontend"},{"name":"skills","value":"react css html node javascript"},{"name":"requirements","value":"react css html node javascript"}],"files":[{"name":"file","value":"c:\\Users\\Utsav yadav\\projects\\opportunity-backend\\sample.jpg"}]},"auth":{"type":"bearer","bearer":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"},"tests":[]},{"_id":"e2d89b5e-544a-4d9c-976f-07f7940c38e8","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/tags?tags=web","url":"localhost:3000/jobs/tags?tag=webdev","method":"GET","sortNum":70000,"created":"2023-03-19T11:30:20.513Z","modified":"2023-03-19T11:30:20.513Z","headers":[],"params":[{"name":"tag","value":"webdev","isPath":false}],"body":{"type":"json","raw":"{\n    \"_id\": \"64107ac06e4c0e1a9e3fe9e1\",\n    \"title\": \"hello\",\n    \"company\": \"hello\",\n    \"desc\": \"hello\",\n    \"url\": \"hello\",\n    \"tags\": [],\n    \"__v\": 0\n    \n  }","form":[]},"tests":[]},{"_id":"6ae85d2b-c473-47a1-ab07-f7485c034353","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/jobs/","url":"localhost:3000/jobs/","method":"GET","sortNum":80000,"created":"2023-03-19T11:30:28.758Z","modified":"2023-03-19T11:30:28.758Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"_id\": \"64107ac06e4c0e1a9e3fe9e1\",\n    \"title\": \"hello\",\n    \"company\": \"hello\",\n    \"desc\": \"hello\",\n    \"url\": \"hello\",\n    \"tags\": [],\n    \"__v\": 0\n    \n  }","form":[]},"tests":[]},{"_id":"c184a312-62d3-4c8c-97b5-629292da7f85","colId":"79333107-f2b9-441e-be6c-0601edefeeb4","containerId":"","name":"localhost:3000/admin/login","url":"localhost:3000/admin/login","method":"POST","sortNum":90000,"created":"2023-03-19T11:30:33.903Z","modified":"2023-03-19T11:30:33.903Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \n    \"name\": \"utsav\",\n    \"email\": \"hello@gmail.com\",\n    \"password\": \"123456\"\n    \n  }","form":[]},"tests":[]}]}
+{
+    "client": "Thunder Client",
+    "collectionName": "opportunity",
+    "dateExported": "2023-03-19T17:01:43.058Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5bae562b-9d59-4f5e-ac62-f077aa8f7cca",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "localhost:3000/jobs/6416efe21a5d8c8f1828a55b",
+            "url": "localhost:3000/jobs/6416efe21a5d8c8f1828a55b",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-03-19T14:22:45.664Z",
+            "modified": "2023-03-19T14:22:45.664Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fa2f9178-df16-4926-92da-c225bf81aec2",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "update an item",
+            "url": "localhost:3000/jobs/640c49443149d3a16b46795a",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-03-19T14:22:45.715Z",
+            "modified": "2023-03-19T14:58:16.879Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "topi4"
+                    },
+                    {
+                        "name": "stipend",
+                        "value": "65"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "d:\\opportunity\\sample.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlveW8iLCJpYXQiOjE2NzkyMzc0NjN9.4Ra_OzZycHhOQ6S1CYaDD-zSw_Xn22iY5hsW4QAcs9o"
+            },
+            "tests": []
+        },
+        {
+            "_id": "520369e6-d16a-4a8b-84b1-b30876057bda",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "delete an an item",
+            "url": "localhost:3000/jobs/6409f7ae624a52f59729c2e6",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-03-19T14:22:45.717Z",
+            "modified": "2023-03-19T15:08:36.795Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlveW8iLCJpYXQiOjE2NzkyMzc0NjN9.4Ra_OzZycHhOQ6S1CYaDD-zSw_Xn22iY5hsW4QAcs9o"
+            },
+            "tests": []
+        },
+        {
+            "_id": "bc2033b7-ba84-43a1-817b-692e5d25a54c",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "create new admin",
+            "url": "localhost:3000/admin/newadmin",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-03-19T14:22:45.718Z",
+            "modified": "2023-03-19T14:22:45.718Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \n    \"name\": \"utsav\",\n    \"email\": \"hello@gmail.com\",\n    \"password\": \"123456\"\n    \n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3OTIxNjcyNH0.1b45rcQgYHCOEBPHGP6dqqsTicjgmwukBORs6Sw0Cig"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a9f7ad11-019c-416c-8c11-8ad032e9da49",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "post a job",
+            "url": "localhost:3000/jobs/",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-03-19T14:22:45.719Z",
+            "modified": "2023-03-19T16:25:29.494Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "gfg intern"
+                    },
+                    {
+                        "name": "company",
+                        "value": "crackdsa"
+                    },
+                    {
+                        "name": "desc",
+                        "value": "intern"
+                    },
+                    {
+                        "name": "lastdate",
+                        "value": "05/22/2012"
+                    },
+                    {
+                        "name": "stipend",
+                        "value": "20000"
+                    },
+                    {
+                        "name": "exclusive",
+                        "value": "true"
+                    },
+                    {
+                        "name": "live",
+                        "value": "true"
+                    },
+                    {
+                        "name": "location",
+                        "value": "kanpur"
+                    },
+                    {
+                        "name": "duration",
+                        "value": "3 months"
+                    },
+                    {
+                        "name": "url",
+                        "value": "crackdsa.com"
+                    },
+                    {
+                        "name": "tags",
+                        "value": "webdev backend frontend"
+                    },
+                    {
+                        "name": "skills",
+                        "value": "python c++"
+                    },
+                    {
+                        "name": "requirements",
+                        "value": "react css html node javascript"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "file",
+                        "value": "d:\\opportunity\\sample.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlveW8iLCJpYXQiOjE2NzkyMzc0NjN9.4Ra_OzZycHhOQ6S1CYaDD-zSw_Xn22iY5hsW4QAcs9o"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6477c64e-7f42-4d29-801d-57e5c47d5d61",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "get an item by tag",
+            "url": "localhost:3000/jobs/tags?tag=webdev",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-03-19T14:22:45.721Z",
+            "modified": "2023-03-19T14:22:45.721Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "tag",
+                    "value": "webdev",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"_id\": \"64107ac06e4c0e1a9e3fe9e1\",\n    \"title\": \"hello\",\n    \"company\": \"hello\",\n    \"desc\": \"hello\",\n    \"url\": \"hello\",\n    \"tags\": [],\n    \"__v\": 0\n    \n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4f55a933-c70a-427f-be21-458d22573e83",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "get by filter",
+            "url": "localhost:3000/jobs/?skills=eact",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-03-19T14:22:45.722Z",
+            "modified": "2023-03-19T16:59:28.955Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "tags",
+                    "value": "back end",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "skills",
+                    "value": "eact",
+                    "isPath": false
+                },
+                {
+                    "name": "exclusive",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "live",
+                    "value": "false",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "d860be97-7226-4920-90a4-3047c19c77ef",
+            "colId": "a3b4d8ee-906d-421b-b084-9dfac10fe4da",
+            "containerId": "",
+            "name": "admin login",
+            "url": "localhost:3000/admin/login",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-03-19T14:22:45.723Z",
+            "modified": "2023-03-19T14:51:03.054Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "yoyo"
+                    },
+                    {
+                        "name": "password",
+                        "value": "xz"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}

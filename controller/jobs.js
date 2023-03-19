@@ -1,33 +1,55 @@
 const jobItem = require("../model/job.js");
 const path = require("path");
+
 const mongoose = require("mongoose");
 exports.getAllItems = async (req, res) => {
-  const { tags, skills, requirements, exclusive, live } = req.query;
-  const query = {};
-  if (tags) {
-    query.tags = tags;
-    console.log(tags)
-  }
-  if (skills) {
-    query.skills = skills;
-  }
-  if (requirements) {
-    query.requirements = requirements;
-  }
-  if (live) {
-    query.live = live;
-  }
-  if (exclusive) {
-    query.exclusive = exclusive;
-  }
+  
   try {
-    let items = await jobItem.find({ ...query });
+    query = {};
+  
+  query.live = req.query.live||true
+  // console.log(tags)
+  if (req.query.exclusive) query.exclusive = req.query.exclusive;
+
+  //   createing regex array of tags
+  if(req.query.tags){
+    
+    let x = [];
+    // console.log(x)
+    for(let it of req.query.tags.toLowerCase().split(" ")){
+      
+      it = new RegExp('^'+it);
+      // console.log(it)
+      x.push(it);
+
+    }
+    // console.log(x);
+
+   query.tags = { $elemMatch: { $in: x } };
+  }
+
+
+  if(req.query.skills){
+    let x = []
+    //  creating regex array of skills
+    for(let it of req.query.skills.toLowerCase().split(" ")){
+      it = new RegExp('^'+it);
+      x.push(it);
+    }
+  query.skills = { $elemMatch: { $in: x } }
+
+  }
+
+
+
+  let items = await jobItem.find(query);
     if (items.length === 0) {
       res.json("No items present");
       return;
     }
     res.status(200).json(items);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 };
@@ -56,7 +78,7 @@ exports.saveitem = async (req, res) => {
       title: req.body.title,
       company: req.body.company,
       desc: req.body.desc,
-      image: path.join("/static/img/", `${req.file?.filename}`),
+      image: path.join("/static/img/", `${req.file.filename}`),
       lastdate: req.body.lastdate,
       stipend: req.body.stipend,
       exclusive: req.body.exclusive,
@@ -88,28 +110,12 @@ exports.getitem = async (req, res) => {
 exports.updateitem = async (req, res) => {
   const id = req.params.id;
   try {
-    const doc = await jobItem.findOne({ _id: id });
+    // let item = new jobItem();
 
-    doc.title = req.body.title ? req.body.title : doc.title;
-    doc.company = req.body.company ? req.body.company : doc.company;
-    doc.desc = req.body.desc ? req.body.desc : doc.desc;
-    if (req.file) {
-      doc.image = path.join("/static/img/", `${req.file?.filename}`);
-    }
-    doc.lastdate = req.body.lastdate ? req.body.lastdate : doc.lastdate;
-    doc.stipend = req.body.stipend ? req.body.stipend : doc.stipend;
-    doc.exclusive = req.body.exclusive ? req.body.exclusive : doc.exclusive;
-    doc.live = req.body.live ? req.body.v : doc.live;
-    doc.location = req.body.location ? req.body.location : doc.location;
-    doc.duration = req.body.duration ? req.body.duration : doc.duration;
-    doc.url = req.body.url ? req.body.url : doc.url;
-    doc.tags = req.body.tags ? req.body.tags?.split(" ") : doc.tags;
-    doc.skills = req.body.skills ? req.body.skills?.split(" ") : doc.skills;
-    doc.requirements = req.body.requirements
-      ? req.body.requirements?.split(" ")
-      : doc.requirements;
-    await doc.save();
-    res.status(201).json(doc);
+    if(req.file)
+   await jobItem.updateOne({ _id:id}, {...(req.body),image:path.join("/static/img/", `${req.file.filename}`)});
+   else await jobItem.updateOne({ _id:id}, {...(req.body)})
+    res.status(201).json("updated");
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -119,8 +125,8 @@ exports.updateitem = async (req, res) => {
 exports.deleteitem = async (req, res) => {
   const id = req.params.id;
   try {
-    const doc = await jobItem.findByIdAndDelete({ _id: id });
-    res.status(201).json(doc);
+    const doc = await jobItem.deleteOne({ _id: id });
+    res.status(201).json("deleted");
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
