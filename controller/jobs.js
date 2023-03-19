@@ -2,16 +2,33 @@ const jobItem = require("../model/job.js");
 const path = require("path");
 const mongoose = require("mongoose");
 exports.getAllItems = async (req, res) => {
+  const { tags, skills, requirements, exclusive, live } = req.query;
+  const query = {};
+  if (tags) {
+    query.tags = tags;
+    console.log(tags)
+  }
+  if (skills) {
+    query.skills = skills;
+  }
+  if (requirements) {
+    query.requirements = requirements;
+  }
+  if (live) {
+    query.live = live;
+  }
+  if (exclusive) {
+    query.exclusive = exclusive;
+  }
   try {
-    let items = await jobItem.find({});
-
+    let items = await jobItem.find({ ...query });
     if (items.length === 0) {
       res.json("No items present");
       return;
     }
     res.status(200).json(items);
   } catch (err) {
-    res.status(500).json("Server error");
+    res.status(500).json(err);
   }
 };
 
@@ -25,7 +42,6 @@ exports.getbytag = async (req, res) => {
     if (items.length === 0) {
       res.status(500).json("No match Found");
       return;
-      
     }
 
     res.status(200).json(items);
@@ -89,7 +105,9 @@ exports.updateitem = async (req, res) => {
     doc.url = req.body.url ? req.body.url : doc.url;
     doc.tags = req.body.tags ? req.body.tags?.split(" ") : doc.tags;
     doc.skills = req.body.skills ? req.body.skills?.split(" ") : doc.skills;
-    doc.requirements = req.body.requirements ? req.body.requirements?.split(" ") : doc.requirements;
+    doc.requirements = req.body.requirements
+      ? req.body.requirements?.split(" ")
+      : doc.requirements;
     await doc.save();
     res.status(201).json(doc);
   } catch (err) {
