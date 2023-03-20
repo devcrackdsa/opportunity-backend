@@ -3,9 +3,8 @@ const jobs = new mongoose.Schema({
   title: { type: String, required: true },
   company: { type: String, required: true },
   desc: { type: String, required: true },
-  startdate: { type: Date, required: true},
-
-  lastdate: { type:Date, required: true},
+  startdate: { type: Date, required: true },
+  lastdate: { type: Date, required: true },
   stipend: { type: String, required: true },
   exclusive: { type: Boolean, default: false },
   live: { type: Boolean, required: true },
