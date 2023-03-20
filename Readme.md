@@ -18,4 +18,3 @@ you can generate salt using-
 
     TO DO:
     Implement sorting by last date
-    Add searching my multiple tags
