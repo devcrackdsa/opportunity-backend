@@ -8,8 +8,9 @@ exports.getAllItems = async (req, res) => {
     query = {};
   
   query.live = req.query.live||true
-  // console.log(tags)
+
   if (req.query.exclusive) query.exclusive = req.query.exclusive;
+
 
   //   createing regex array of tags
   if(req.query.tags){
@@ -74,12 +75,14 @@ exports.getAllItems = async (req, res) => {
 
 exports.saveitem = async (req, res) => {
   try {
+
     let obj = {
       title: req.body.title,
       company: req.body.company,
       desc: req.body.desc,
       image: path.join("/static/img/", `${req.file.filename}`),
-      lastdate: req.body.lastdate,
+      startdate:req.body.startdate,
+      lastdate:req.body.lastdate,
       stipend: req.body.stipend,
       exclusive: req.body.exclusive,
       live: req.body.live,
@@ -139,3 +142,19 @@ exports.deleteitem = async (req, res) => {
     res.status(400).json(err);
   }
 };
+
+exports.refreshDataBase= async(req,res)=>{
+  // console.log(refresh)
+  try{
+
+    
+    await jobItem.deleteMany({ lastdate:{"$lt": new Date(new Date().getTime()-(24 * 60 * 60 * 1000) )}});
+  
+  res.status(200).send("done");
+  }
+  catch(err){
+    console.log(err);
+    res.status(500).send(err)
+  }
+
+}
