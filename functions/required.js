@@ -54,10 +54,8 @@ const auth = (req, res, next) => {
       } else {
         res.sendStatus(401);
       }
-    }
-    else
-    {
-     res.sendStatus(401);
+    } else {
+      res.sendStatus(401);
     }
   } catch (err) {
     console.log(err);

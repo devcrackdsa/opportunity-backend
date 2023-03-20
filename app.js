@@ -6,24 +6,6 @@ var cookieParser = require("cookie-parser");
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 const jwt = require("jsonwebtoken");
 
-// ___________AUTHORIZATION_________
-const auth = (req, res, next) => {
-  try {
-    const token = req.get("Authorization").split("Bearer ")[1];
-    console.log(token);
-    var decoded = jwt.verify(token, process.env.jwt_secret);
-    if (decoded.email) {
-      next();
-    } else {
-      res.sendStatus(401);
-    }
-  } catch (err) {
-    console.log(err);
-    res.sendStatus(401);
-  }
-  console.log(decoded);
-};
-
 // ___________GETJOBS_________
 const jobsRoute = require("./routes/jobs");
 app.use("/jobs", jobsRoute);

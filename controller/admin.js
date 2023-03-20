@@ -27,6 +27,7 @@ exports.newAdmin = async (req, res) => {
       };
   
       let newAdmin = new admin(obj);
+      delete obj.password;
       await newAdmin.save();
       res.status(201).json(obj);
     } catch (err) {
