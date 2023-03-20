@@ -55,22 +55,22 @@ exports.getAllItems = async (req, res) => {
 };
 
 //not working
-exports.getbytag = async (req, res) => {
-  try {
-    let tag = req.query.tag;
+// exports.getbytag = async (req, res) => {
+//   try {
+//     let tag = req.query.tag;
 
-    let items = await jobItem.find({ tags: tag });
+//     let items = await jobItem.find({ tags: tag });
 
-    if (items.length === 0) {
-      res.status(500).json("No match Found");
-      return;
-    }
+//     if (items.length === 0) {
+//       res.status(500).json("No match Found");
+//       return;
+//     }
 
-    res.status(200).json(items);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-};
+//     res.status(200).json(items);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// };
 
 exports.saveitem = async (req, res) => {
   try {
@@ -108,13 +108,18 @@ exports.getitem = async (req, res) => {
 };
 
 exports.updateitem = async (req, res) => {
-  const id = req.params.id;
+  
   try {
-    // let item = new jobItem();
+    const id = req.params.id;
+    let query = {...(req.body)};
 
-    if(req.file)
-   await jobItem.updateOne({ _id:id}, {...(req.body),image:path.join("/static/img/", `${req.file.filename}`)});
-   else await jobItem.updateOne({ _id:id}, {...(req.body)})
+    if(req.file) query.image = path.join("/static/img/", `${req.file.filename}`);
+
+    if(req.body.tags) query.tags = req.body.tags.split(" ");
+      // console.log(query)
+
+   await jobItem.updateOne({ _id:id}, query);
+   
     res.status(201).json("updated");
   } catch (err) {
     console.log(err);
