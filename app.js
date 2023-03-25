@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors=require("cors");
 require("dotenv").config();
 const PORT = process.env.port || 3000;
 var cookieParser = require("cookie-parser");
@@ -23,6 +24,7 @@ app.use(
     extended: false,
   })
 );
+app.use(cors);
 app.get("/", (req, res) => {
   res.send("Welcome to opportunity backend");
 });
