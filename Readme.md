@@ -33,3 +33,38 @@
 
 4. Execute npm i
 5. Execute npm start 
+
+
+# API Reference
+
+### Create new Admin
+
+    1.Disable auth from routes/admin.js while creating first Admin
+    2.If you want to create IInd admin again then take out the token from Database and pass it into the Bearer section in auth.(As it possible to make new admin from any existing admin only).
+    3.Enable the auth from routes/admin.js
+
+```http
+  POST /admin/newadmin
+```
+
+| Parameter     | Type     | 
+| :--------     | :------- | 
+| `name`        | `string` | 
+| `password`    | `string` | 
+| `email`       | `string` | 
+
+### Screenshots for reference:-
+
+#### -All ThunderClient Collections
+
+![App Screenshot](https://raw.githubusercontent.com/RajavJain/opportunity-backend/5ebecdd88fe200c575d02de7d01d27f75831c979/static/img/ThunderClient.png)
+
+#### -Response of  POST /admin/newadmin
+
+![App Screenshot](https://raw.githubusercontent.com/RajavJain/opportunity-backend/5ebecdd88fe200c575d02de7d01d27f75831c979/static/img/2.png)
+
+#### -Bearer Token 
+
+![App Screenshot](https://raw.githubusercontent.com/RajavJain/opportunity-backend/5ebecdd88fe200c575d02de7d01d27f75831c979/static/img/3.png)
+
+
