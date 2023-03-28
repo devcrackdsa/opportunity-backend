@@ -15,15 +15,18 @@
         1. Provide mongodb connection string in variable "connection_string"
 
         2. Provide salt for password hashing in variable named "salt".
-
-        For generating the Salt you can use:-
-
-        const bcrypt = require('bcrypt'); 
-        const salt = bcrypt.genSaltSync(15);
-
-        And then after, copy the salt and store it in the variable named salt.
-
         3. Provide jwt secret key in variable named "jwt_secret" jwt secret key can be anything.
+        4. Provide port in varaible name "port". By default it will run on port 3000.
+       
+       After completing above steps-
+       =>run command node createuser.js
+       => it will print an alphanumeric string on console, copy it and place it in .env file in a variable named "salt"
+       => After that program will be asking you to prove name, email and password in a row , space seperated. Provide it these will be your credentails for login.
+
+
+       
+
+        
 
 ## Screenshot of .env file
 
