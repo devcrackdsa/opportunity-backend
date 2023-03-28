@@ -68,3 +68,25 @@
 ![App Screenshot](https://raw.githubusercontent.com/RajavJain/opportunity-backend/5ebecdd88fe200c575d02de7d01d27f75831c979/static/img/3.png)
 
 
+&nbsp;
+
+
+### Login of Admin
+
+    1. Enter the details of admin user.
+    2. Copy the token from it from response body.
+
+```http
+  POST /admin/login
+```
+
+| Parameter     | Type     | 
+| :--------     | :------- | 
+| `password`    | `string` | 
+| `email`       | `string` | 
+
+### Screenshot for reference:-
+
+![App Screenshot](https://github.com/RajavJain/opportunity-backend/blob/master/static/img/4.png?raw=true)
+
+
