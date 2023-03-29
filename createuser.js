@@ -1,6 +1,7 @@
 const { hash } = require('./functions/hash');
 const mongoose =require('mongoose');
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 mongoose.connect(
     process.env.connection_string || "mongodb://localhost/opportunity"
   );
@@ -8,7 +9,7 @@ mongoose.connect(
   var db = mongoose.connection;
   db.on("error", console.error.bind(console, "connection error:"));
  
-require("dotenv").config();
+
 if(!process.env["salt"]){
     
 const salt = bcrypt.genSaltSync(15);
