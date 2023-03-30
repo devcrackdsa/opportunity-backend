@@ -74,7 +74,7 @@ exports.saveitem = async (req, res) => {
 
 exports.getitem = async (req, res) => {
   const id = req.params.id;
-  console.log({ id });
+  // console.log({ id });
   const job = await jobItem.findById(id);
   if (job.lastdate < new Date(new Date().getTime() - 24 * 60 * 60 * 1000)) {
     job.live = false;
@@ -91,7 +91,7 @@ exports.updateitem = async (req, res) => {
     if (req.body.tags) query.tags = req.body.tags.split(" ");
     if (req.body.skills) query.skills = req.body.skills.split(" ");
     // if(req.body.requirements) query.requirements = req.body.requirements.split("\n");
-    console.log(query);
+    // console.log(query);
     const item = await jobItem.updateOne({ _id: id }, query);
     res.status(201).json(item);
   } catch (err) {
