@@ -7,7 +7,7 @@ var cookieParser = require("cookie-parser");
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 const jwt = require("jsonwebtoken");
 
-// ___________GETJOBS_________
+// _______________GETJOBS_________
 const jobsRoute = require("./routes/jobs");
 app.use("/jobs", jobsRoute);
 

@@ -27,6 +27,7 @@ const readline = require('readline').createInterface({
   
   readline.question('Enter username email and password seperated with space-\n', async(inp) => {
     let [name,email, password]  =inp.split(" ")
+    console.log(inp.split(" "))
 
     password = await hash(password);
     let obj = {

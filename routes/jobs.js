@@ -1,5 +1,15 @@
-const { router, upload, auth } = require("../functions/required");
+const {  upload, auth } = require("../functions/required");
 const jobscontroller = require("../controller/jobs");
+const express = require("express")
+let router = express.Router();
+
+
+router.use(express.json());
+router.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
 
 router
   .get("/", jobscontroller.getAllItems) // to get all items

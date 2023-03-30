@@ -7,15 +7,7 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.jwt_secret;
 
 // ____________Router___________
-let router = express.Router();
 
-router.use("/static", express.static("static"));
-router.use(express.json());
-router.use(
-  express.urlencoded({
-    extended: false,
-  })
-);
 
 // ___mongoose_______
 
@@ -47,7 +39,7 @@ const auth = (req, res, next) => {
     var token = req.get("Authorization");
     if (token) {
       token = token.split(" ")[1];
-      console.log(token);
+      // console.log(token);
       var decoded = jwt.verify(token, process.env.jwt_secret);
       if (decoded.email) {
         next();
@@ -61,7 +53,7 @@ const auth = (req, res, next) => {
     console.log(err);
     res.sendStatus(401);
   }
-  console.log(decoded);
+  // console.log(decoded);
 };
 
-module.exports = { router, mongoose, upload, auth };
+module.exports = {  mongoose, upload, auth };
