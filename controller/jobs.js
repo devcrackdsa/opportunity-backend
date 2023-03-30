@@ -5,7 +5,10 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 exports.getAllItems = async (req, res) => {
   try {
+
+    // console.log("jobs");
     query = {};
+    let tofind = []
     if (req.query.live) query.live = req.query.live;
     if (req.query.exclusive) query.exclusive = req.query.exclusive;
     //   createing regex array of tags
@@ -19,7 +22,9 @@ exports.getAllItems = async (req, res) => {
       }
       // console.log(x);
 
-      query.tags = { $elemMatch: { $in: x } };
+      // query.tags = { $elemMatch: { $in: x } };
+      tofind.push({tags:{ $elemMatch: { $in: x } }});
+
     }
 
     if (req.query.skills) {
@@ -29,10 +34,14 @@ exports.getAllItems = async (req, res) => {
         it = new RegExp("^" + it);
         x.push(it);
       }
-      query.skills = { $elemMatch: { $in: x } };
+      // query.skills = { $elemMatch: { $in: x } };
+      tofind.push({skills:{ $elemMatch: { $in: x } }});
     }
-
-    let items = await jobItem.find(query);
+    
+    
+    // console.log(tofind)
+    // console.log({$or:tofind,...query})
+        let items = await jobItem.find({$or:tofind,...query});
     if (items.length === 0) {
       res.json("No items present");
       return;
@@ -73,6 +82,8 @@ exports.saveitem = async (req, res) => {
 };
 
 exports.getitem = async (req, res) => {
+  try{
+  // console.log(req.params.id)
   const id = req.params.id;
   // console.log({ id });
   const job = await jobItem.findById(id);
@@ -80,6 +91,11 @@ exports.getitem = async (req, res) => {
     job.live = false;
   }
   res.json(job);
+}
+catch(err){
+  console.log(err)
+  res.json(err)
+}
 };
 
 exports.updateitem = async (req, res) => {
