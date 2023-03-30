@@ -15,18 +15,15 @@
         1. Provide mongodb connection string in variable "connection_string"
 
         2. Provide salt for password hashing in variable named "salt".
+
+        For generating the Salt you can use:-
+
+        const bcrypt = require('bcrypt'); 
+        const salt = bcrypt.genSaltSync(15);
+
+        And then after, copy the salt and store it in the variable named salt.
+
         3. Provide jwt secret key in variable named "jwt_secret" jwt secret key can be anything.
-        4. Provide port in varaible name "port". By default it will run on port 3000.
-       
-       After completing above steps-
-       =>run command node createuser.js
-       => it will print an alphanumeric string on console, copy it and place it in .env file in a variable named "salt"
-       => After that program will be asking you to prove name, email and password in a row , space seperated. Provide it these will be your credentails for login.
-
-
-       
-
-        
 
 ## Screenshot of .env file
 
@@ -70,9 +67,7 @@
 
 ![App Screenshot](https://raw.githubusercontent.com/RajavJain/opportunity-backend/5ebecdd88fe200c575d02de7d01d27f75831c979/static/img/3.png)
 
-
-&nbsp;
-
+        
 
 ### Login of Admin
 
@@ -92,4 +87,45 @@
 
 ![App Screenshot](https://github.com/RajavJain/opportunity-backend/blob/master/static/img/4.png?raw=true)
 
+
+
+
+### Login of Admin
+
+    1. Enter the all the details in form
+    2. Paste the token(of admin) in Auth's Bearer Section.
+    3. Provide all the details in form section.
+    4. Provide the image(of the post) in the Body's form section
+
+```http
+  POST /jobs
+```
+
+| Parameter     | Type     | 
+| :--------     | :------- | 
+| `title`    | `string` | 
+| `company`       | `string` | 
+| `description`       | `string` | 
+| `lastdate`       | `Date` | 
+| `stipend`       | `Date` | 
+| `exclusive`       | `string` | 
+| `live`       | `boolean` | 
+| `location`       | `boolean` | 
+| `duration`       | `string` | 
+| `url`       | `string` | 
+| `tags`       | `string` | 
+| `skills`       | `string` | 
+| `requirements`       | `string` | 
+| `startdate`       | `string` | 
+
+
+
+
+### Screenshot for reference:-
+
+#### Response of POST request:-
+![App Screenshot](https://github.com/RajavJain/opportunity-backend/blob/master/static/img/5.png?raw=true)
+
+#### Where to enter Bearer Token:- 
+![App Screenshot](https://github.com/RajavJain/opportunity-backend/blob/master/static/img/6.png?raw=true)
 
