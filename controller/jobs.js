@@ -5,7 +5,13 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 exports.getAllItems = async (req, res) => {
   try {
+    // console.log(req.query)
 
+
+    if(!req.query){
+      let items = await jobItem.find();
+      return res.json(items);
+    }
     // console.log("jobs");
     query = {};
     let tofind = []
@@ -41,6 +47,11 @@ exports.getAllItems = async (req, res) => {
     
     // console.log(tofind)
     // console.log({$or:tofind,...query})
+    // console.log(Object.keys(query).length,tofind.length)
+    if(!Object.keys(query).length&& !tofind.length){
+      let allitems = await jobItem.find();
+      return res.json(allitems);
+    }
         let items = await jobItem.find({$or:tofind,...query});
     if (items.length === 0) {
       res.json("No items present");
