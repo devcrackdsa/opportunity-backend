@@ -73,7 +73,7 @@
 | `password`    | `string` | 
 | `email`       | `string` | 
 
-note- send the bearer token along with your request otherwise you wont be authorised
+note- send the bearer token along with your request otherwise you wont be authorised,and email should be of valid format.
 
 ### Screenshots for reference:-
 
@@ -95,12 +95,12 @@ note- send the bearer token along with your request otherwise you wont be author
 | `title`    | `string` | 
 | `company`       | `string` | 
 | `description`       | `string` |
-| `startdate`       | `string` |
+| `startdate`       | `Date` |
 | `lastdate`       | `Date` | 
-| `stipend`       | `Date` | 
-| `exclusive`       | `string` | 
+| `stipend`       | `string` | 
+| `exclusive`       | `boolean` | 
 | `live`       | `boolean` | 
-| `location`       | `boolean` | 
+| `location`       | `string` | 
 | `duration`       | `string` | 
 | `url`       | `string` | 
 | `tags`       | `string` | 
@@ -163,12 +163,12 @@ Note- send bearer token along with request
 | `title`    | `string` | 
 | `company`       | `string` | 
 | `description`       | `string` |
-| `startdate`       | `string` |
+| `startdate`       | `Date` |
 | `lastdate`       | `Date` | 
-| `stipend`       | `Date` | 
-| `exclusive`       | `string` | 
+| `stipend`       | `string` | 
+| `exclusive`       | `boolean` | 
 | `live`       | `boolean` | 
-| `location`       | `boolean` | 
+| `location`       | `string` | 
 | `duration`       | `string` | 
 | `url`       | `string` | 
 | `tags`       | `string` | 
