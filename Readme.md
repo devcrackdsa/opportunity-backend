@@ -9,6 +9,7 @@
 1. Clone the repo
 2. Open it in any ide(VS Code) 
 3. Before running the app
+4. Execute npm i
 
         Create an .env file and the content of .env file will be:-
 
@@ -23,14 +24,10 @@
        => it will print an alphanumeric string on console, copy it and place it in .env file in a variable named "salt"
        => After that program will be asking you to prove name, email and password in a row , space seperated. Provide it these will be your credentails for login.
 
-## Screenshot of .env file
-
-![Capture](https://user-images.githubusercontent.com/105383117/229050842-72638539-ca27-4adb-ade7-1efbd81ec8e0.JPG)
-        
         
 
-4. Execute npm i
-5. Execute npm start 
+
+5. Execute node app.js 
 
 
 # API Reference
