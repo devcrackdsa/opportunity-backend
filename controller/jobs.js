@@ -8,12 +8,9 @@ exports.getAllItems = async (req, res) => {
     // console.log(req.query)
 
 
-    if(!req.query){
-      let items = await jobItem.find();
-      return res.json(items);
-    }
+    
     // console.log("jobs");
-    query = {};
+    query = {...(req.query)};
     let tofind = []
     if (req.query.live) query.live = req.query.live;
     if (req.query.exclusive) query.exclusive = req.query.exclusive;
@@ -30,6 +27,7 @@ exports.getAllItems = async (req, res) => {
 
       // query.tags = { $elemMatch: { $in: x } };
       tofind.push({tags:{ $elemMatch: { $in: x } }});
+      delete query.tags;
 
     }
 
@@ -42,17 +40,32 @@ exports.getAllItems = async (req, res) => {
       }
       // query.skills = { $elemMatch: { $in: x } };
       tofind.push({skills:{ $elemMatch: { $in: x } }});
+      delete query.skills;
     }
     
     
-    // console.log(tofind)
-    // console.log({$or:tofind,...query})
-    // console.log(Object.keys(query).length,tofind.length)
+    //  if no query sent so we have to send all obj
+
+ 
     if(!Object.keys(query).length&& !tofind.length){
       let allitems = await jobItem.find();
       return res.json(allitems);
     }
-        let items = await jobItem.find({$or:tofind,...query});
+
+    let items;
+
+    // if skills and tags not present 
+    if(!tofind.length){
+      items = await jobItem.find({...query})
+    }
+
+    // if skills or tags present
+    
+    else{
+      items = await jobItem.find({$or:tofind,...query});
+    }
+
+     
     if (items.length === 0) {
       res.json("No items present");
       return;
