@@ -38,6 +38,7 @@ exports.newAdmin = async (req, res) => {
   // _____________Admin Login____________________
 
   exports.login =async (req, res) => {
+    console.log(req.body)
     try {
       let email = req.body.email;
       let obj = await admin.findOne({ email });
