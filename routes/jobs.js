@@ -2,6 +2,7 @@ const {  upload, auth } = require("../functions/required");
 const jobscontroller = require("../controller/jobs");
 const express = require("express")
 let router = express.Router();
+const cors=require("cors");
 
 
 router.use(express.json());
@@ -10,6 +11,10 @@ router.use(
     extended: false,
   })
 );
+router.use(cors({
+  origin:"*"
+}));
+
 
 router
   .get("/", jobscontroller.getAllItems) // to get all items
