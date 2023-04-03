@@ -91,8 +91,8 @@ exports.saveitem = async (req, res) => {
       location: req.body.location,
       duration: req.body.duration,
       url: req.body.url,
-      tags: req.body.tags.split(" "),
-      skills: req.body.skills.split(" "),
+      tags: req.body.tags.toLowerCase().split(" "),
+      skills: req.body.skills.toLowerCase().split(" "),
       requirements: req.body.requirements,
     };
 
@@ -128,8 +128,8 @@ exports.updateitem = async (req, res) => {
     let query = { ...req.body };
     if (req.file)
       query.image = path.join("/static/img/", `${req.file.filename}`);
-    if (req.body.tags) query.tags = req.body.tags.split(" ");
-    if (req.body.skills) query.skills = req.body.skills.split(" ");
+    if (req.body.tags) query.tags = req.body.tags.toLowerCase().split(" ");
+    if (req.body.skills) query.skills = req.body.skills.toLowerCase().split(" ");
     // if(req.body.requirements) query.requirements = req.body.requirements.split("\n");
     // console.log(query);
     const item = await jobItem.updateOne({ _id: id }, query);
