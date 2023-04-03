@@ -11,9 +11,7 @@ router.use(
     extended: false,
   })
 );
-router.use(cors({
-  origin:"*"
-}));
+router.use(cors());
 router
   .post("/newadmin", auth, admincontroller.newAdmin)
   .post("/login", admincontroller.login);
