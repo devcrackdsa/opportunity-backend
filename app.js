@@ -24,9 +24,7 @@ app.use(
     extended: false,
   })
 );
-app.use(cors({
-  origin:"*"
-}));
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Welcome to opportunity backend");
 });
