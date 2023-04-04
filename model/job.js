@@ -10,6 +10,7 @@ const jobs = new mongoose.Schema({
   live: { type: Boolean, required: true },
   location: { type: String, required: true },
   duration: { type: String, required: true },
+  createdAt:{type:Date, default: new Date()},
   url: { type: String, required: true },
   image: { type: String, required: true },
   skills: { type: [String] },
