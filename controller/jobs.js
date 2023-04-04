@@ -48,7 +48,7 @@ exports.getAllItems = async (req, res) => {
 
  
     if(!Object.keys(query).length&& !tofind.length){
-      let allitems = await jobItem.find();
+      let allitems = await jobItem.find({},null,{sort:{createdAt:-1}});
       return res.json(allitems);
     }
 
@@ -56,13 +56,13 @@ exports.getAllItems = async (req, res) => {
 
     // if skills and tags not present 
     if(!tofind.length){
-      items = await jobItem.find({...query})
+      items = await jobItem.find({...query},null,{sort:{createdAt:-1}})
     }
 
     // if skills or tags present
     
     else{
-      items = await jobItem.find({$or:tofind,...query});
+      items = await jobItem.find({$or:tofind,...query},null,{sort:{createdAt:-1}});
     }
 
      

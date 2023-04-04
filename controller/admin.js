@@ -16,14 +16,14 @@ exports.newAdmin = async (req, res) => {
       if (exists) {
         return res.status(400).json("Admin with this email already exists");
       }
-      var token = jwt.sign({ email: req.body.email }, jwtSecret);
+      // var token = jwt.sign({ email: req.body.email }, jwtSecret);
+      
       pass = await hash(req.body.password);
       
       let obj = {
         name: req.body.name,
         password: pass,
         email: req.body.email,
-        token: token,
       };
   
       let newAdmin = new admin(obj);
