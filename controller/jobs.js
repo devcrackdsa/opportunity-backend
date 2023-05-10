@@ -15,17 +15,16 @@ exports.getAllItems = async (req, res) => {
     if (req.query.live) query.live = req.query.live;
     if (req.query.exclusive) query.exclusive = req.query.exclusive;
     //   createing regex array of tags
+   
     if (req.query.tags) {
       let x = [];
-      // console.log(x)
-      for (let it of req.query.tags.toLowerCase().split(" ")) {
-        it = new RegExp("^" + it);
-        // console.log(it)
+     
+      for (let it of req.query.tags.toLowerCase().split(",")) {
+        it = new RegExp(it.trim());
+       
         x.push(it);
       }
-      // console.log(x);
-
-      // query.tags = { $elemMatch: { $in: x } };
+     
       tofind.push({tags:{ $elemMatch: { $in: x } }});
       delete query.tags;
 
@@ -34,8 +33,8 @@ exports.getAllItems = async (req, res) => {
     if (req.query.skills) {
       let x = [];
       //  creating regex array of skills
-      for (let it of req.query.skills.toLowerCase().split(" ")) {
-        it = new RegExp("^" + it);
+      for (let it of req.query.skills.toLowerCase().split(",")) {
+        it = new RegExp(it.trim());
         x.push(it);
       }
       // query.skills = { $elemMatch: { $in: x } };
@@ -91,8 +90,8 @@ exports.saveitem = async (req, res) => {
       location: req.body.location,
       duration: req.body.duration,
       url: req.body.url,
-      tags: req.body.tags.toLowerCase().split(" "),
-      skills: req.body.skills.toLowerCase().split(" "),
+      tags: req.body.tags.toLowerCase().split(",").map(item=>item.trim()),
+      skills: req.body.skills.toLowerCase().split(",").map(item=>item.trim()),
       requirements: req.body.requirements,
     };
 
@@ -128,8 +127,8 @@ exports.updateitem = async (req, res) => {
     let query = { ...req.body };
     if (req.file)
       query.image = path.join("/static/img/", `${req.file.filename}`);
-    if (req.body.tags) query.tags = req.body.tags.toLowerCase().split(" ");
-    if (req.body.skills) query.skills = req.body.skills.toLowerCase().split(" ");
+    if (req.body.tags) query.tags = req.body.tags.toLowerCase().split(",").map(item=>item.trim());
+    if (req.body.skills) query.skills = req.body.skills.toLowerCase().split(",").map(item=>item.trim());
     // if(req.body.requirements) query.requirements = req.body.requirements.split("\n");
     // console.log(query);
     const item = await jobItem.updateOne({ _id: id }, query);
