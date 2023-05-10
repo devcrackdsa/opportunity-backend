@@ -110,9 +110,9 @@ note- send the bearer token along with your request otherwise you wont be author
 Note-
 
     1.requirements field is an array you can acheive that with having multiple feilds with same name in the form.
-    2. tags field is an space seperated string with "-" chained elements.
-    ex- "web-devlopment backend-developer os"
-    3. Do step 2 the same with the skills field.
+    2. tags  ans skills fields are an comma(",")elements.
+    ex- "web devlopment, backend developer"
+  
 
 
 ### Screenshot for reference:-
@@ -179,9 +179,8 @@ note-
 Note-
 
     1.requirements field is an array you can acheive that with having multiple feilds with same name in the form.
-    2. tags field is an space seperated string with "-" chained elements.
-    ex- "web-devlopment backend-developer os"
-    3. Do step 2 the same with the skills field.
+    2. tags  ans skills fields are an comma(",")elements.
+    ex- "web devlopment, backend developer"
 
 ### Screenshot of response:-
 ![updateres](https://user-images.githubusercontent.com/105383117/229057182-07bfa443-90ad-40a0-b724-5e945d335000.JPG)
